@@ -154,7 +154,7 @@ html,
   } .hambt div {
     background-color: var(--c1);
     transition: background-color 0.3s ease;
-    height: clamp(0.2rem, 1.5vw, 0.4rem);
+    height: clamp(0.2rem, 1.5vw, 0.3rem);
     border-radius: 1rem;
   }
 
