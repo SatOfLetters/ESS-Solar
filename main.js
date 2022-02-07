@@ -33,7 +33,7 @@ document.body.onscroll = function() {
         toggleNav()
     } 
     
-    if(window.pageYOffset > 10) {
+    if(window.pageYOffset > 100) {
         headerAnchor.classList.add('logo_shrink')
         headerContent.classList.add('header_shrink')
     } else {
@@ -65,3 +65,22 @@ for (i = 0; i < coll.length; i++) {
     }
   });
 }
+
+
+
+
+
+document.querySelector("form").addEventListener("submit", handleSubmit);
+
+const handleSubmit = (e) => {
+  e.preventDefault();
+  let myForm = document.getElementById("contactForm");
+  let formData = new FormData(myForm);
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(formData).toString(),
+  })
+    .then(() => console.log("Form successfully submitted"))
+    .catch((error) => alert(error));
+};

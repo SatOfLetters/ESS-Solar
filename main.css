@@ -18,7 +18,7 @@ html,
     --dark: #0A070B;
     --darka: #28212a;
     --darkb:#455;
-    --c1:#1e7635;
+    --c1: #22893d;
     --c1a:#53b46c;
   }
   
@@ -62,11 +62,12 @@ html,
   }
   
   ::-webkit-scrollbar-track {
-    background: var(--lighta);
+    background: var(--light);
   }
   
   ::-webkit-scrollbar-thumb {
     background: var(--c1);
+    border-radius: 1rem;
   }
 
   .width1 {
@@ -95,7 +96,7 @@ html,
     justify-content: space-between;
     margin: 0 auto;
     height: clamp(5rem, 30vw, 8rem);
-    transition: height 0.3s ease-out;
+    transition: height 0.2s ease-out;
   } header nav {
     display: flex;
     flex-direction: column;
@@ -138,23 +139,23 @@ html,
     width: clamp(10rem, 55vw, 16rem);
     display: flex;
     z-index: 2;
-    transition: width 0.3s ease-out;
+    transition: width 0.2s ease-out;
   }
 
   .hambt {
-    width: clamp(2.5rem, 11vw, 3rem);
-    height: clamp(2.5rem, 11vw, 3rem);
+    width: clamp(2.5rem, 9vw, 3rem);
+    height: clamp(2.5rem, 9vw, 3rem);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     z-index: 2;
     cursor: pointer;
     box-sizing: border-box;
-    padding: 0.4rem 0.3rem;
+    padding: 0.5rem 0.3rem;
   } .hambt div {
     background-color: var(--c1);
     transition: background-color 0.3s ease;
-    height: clamp(0.2rem, 1.5vw, 0.3rem);
+    height: clamp(0.25rem, 1vw, 0.3rem);
     border-radius: 1rem;
   }
 
@@ -256,7 +257,7 @@ html,
 
   .how_it_works_section, .contact_section {
     background-color: var(--c1);
-    background-image: linear-gradient(80deg, var(--c1), var(--c1a));
+    background-image: linear-gradient(75deg, var(--c1) 24%, var(--c1a));
     padding: 4rem 0;
     color: var(--light);
     position: relative;
@@ -367,22 +368,25 @@ footer {
   display: flex;
   justify-content: center;
 } footer .tel_anchor, footer .email_anchor {
-  width:auto;
+  width: auto;
   justify-content: left;
   margin-bottom: 1rem;
-  gap: 1rem;
+  gap: clamp(0.5rem, 4vw, 1rem);
   font-weight: 600;
   font-size: 1.1rem;
-  padding: 0.8rem 1.4rem;
+  padding: 0.8rem clamp(0.5rem, 3.3vw, 1.3rem);
+  font-size: clamp(0.7rem, 4vw, 1rem);
+  font-weight: 700;
+  color: var(--darkb);
 } footer .tel_anchor img, footer .email_anchor img {
-  width: 2rem;
+  width: clamp(1rem, 6.5vw, 2rem);
 }
 
 .flex_anchors {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: calc(2vw - 1rem);
 }
 
 
@@ -442,6 +446,9 @@ footer {
 .contact_section {
   padding: 8rem 0 4rem 0;
   margin-top: -5rem;
+  background-image: url('assets/bg1.jpg');
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 form {
@@ -470,31 +477,31 @@ label {
   letter-spacing: 0.6px;
   box-sizing: border-box;
   border: none;
-  background-color: rgba(255,255,255,0.15);
+  background-color: rgba(255,255,255,0.05);
   border-radius: 0.3rem;
   transition: background-color 0.3s ease;
   color: var(--light);
-} input:focus, textarea:focus {
-  border: 1px solid rgb(168, 168, 161);
-  outline:none;
-} form button {
+  backdrop-filter: blur(3px);
+  border: 1px solid #8CA;
+}form button {
   width: 100%;
   margin-top: 1rem;
-  background-color: var(--c1);
+  background-color: var(--c1a);
   color: var(--light);
   border: none;
   padding: 0.8rem 0;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition:filter 0.3s ease;
   border-radius: 0.3rem;
   font-size: 1.1rem;
 } form button:hover {
-  background-color: var(--c1a);
-  transition:background-color 0.05s ease;
+  filter: brightness(1.06);
+  transition:filter 0.05s ease;
 } input:focus, textarea:focus {
-  background-color: rgba(255,255,255,0.25);
-  border:none;
+  background-color: rgba(255,255,255,0.15);
+  border: 1px solid #8CA;
+  outline:none;
 }
 
 
@@ -511,12 +518,19 @@ label {
 .services_section .faq_ctnr {
   max-width: 50rem;
   margin: 0 auto;
+  max-height: clamp(12rem, 90vw, 28rem);
+  overflow-y: scroll;
+  padding: 2rem clamp(1rem, 2vw, 3rem) clamp(3rem, 4vw, 8rem) 0rem;
+  -webkit-mask-image: linear-gradient(180deg, black 80%, transparent 120%);
+  border-right: 3px solid var(--lightb);
 }
 .services_section .collapsible {
-  background-color: var(--c1a);
+  background-color: var(--c1);
   font-weight: 900;
 } .services_section .content p {
   color: var(--darkb);
+} .services_section .collapsible:hover {
+  background-color: var(--c1a);
 }
 
 
@@ -581,17 +595,18 @@ label {
       width: unset;
       margin: 0;
     } header nav a {
-      color: var(--c1);
+      color: var(--darkb);
       padding: 1rem clamp(0.4rem, calc(4vw - 1.5rem), 2rem);
       border: none;
       width: unset;
-      transition: background-color 0.6s ease;
+      transition: background-color 0.6s ease, color 0.6s ease;
       background-color: transparent;
       box-shadow: unset;
       font-weight: 600;
     } header nav a:hover {
-      transition: background-color 0s ease;
+      transition: background-color 0s ease, color 0s ease;
       background-color: var(--light);
+      color: var(--c1);
     } .hambt {
       display: none;
     }
@@ -602,7 +617,7 @@ label {
     }
 
     .how_it_works_section p {
-      font-weight: 300;
+      font-weight: 400;
     } .how_it_works_text {
       width: clamp(20rem, 40vw, 38rem);
     } .how_it_works_imgs {
@@ -634,6 +649,13 @@ label {
     }
     .products_ctnr > div img {
       height: 21rem;
+    } .products_ctnr a {
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    } .products_ctnr > div:hover a {
+      opacity:1;
+      transition: opacity 0.05s ease;
     }
+
   }
   
