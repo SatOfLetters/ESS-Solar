@@ -186,6 +186,8 @@ html,
     font-size: clamp(1.5rem, 9.5vw, 2.6rem);
     line-height: clamp(1.8rem, 10vw, 3rem);
     margin-bottom: 0.6rem;
+  } .services_section .title1 {
+    margin-bottom: 3rem;
   }
 
   .logo_shrink {
@@ -359,7 +361,7 @@ html,
 
 footer {
   background-color:var(--light);
-  padding:3rem 0;
+  padding: 3rem 0 clamp(1rem, 5vw, 4rem) 0;
   border-top: 2px solid var(--lightb);
 }
 
@@ -391,7 +393,7 @@ footer {
 
 
 .services_section {
-  padding: 8rem 0 8rem 0;
+  padding: 10rem 0 8rem 0;
   margin-top: -5rem;
   background: var(--light);
   position: relative;
@@ -444,7 +446,7 @@ footer {
 
 
 .contact_section {
-  padding: 8rem 0 4rem 0;
+  padding: 9rem 0 5rem 0;
   margin-top: -5rem;
   background-image: url('assets/bg1.jpg');
   background-attachment: fixed;
@@ -532,7 +534,10 @@ label {
 } .services_section .collapsible:hover {
   background-color: var(--c1a);
 }
-
+footer div > p {
+  text-align: center;
+  margin-top: 2rem;
+}
 
 
 
@@ -635,6 +640,8 @@ label {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+    } footer div > p {
+      text-align: left;
     }
   
 
